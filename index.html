@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New York Host</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>New York Studio</h1>
+    <nav>
+      <a href="#services">خدماتنا</a>
+      <a href="#order">طلب منتج</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>اطلب الان وش منتضر اشياء حصرية </h2>
+    <p>ابدأ رحلتك معنا  – MTA:SA، SAMP، FiveM، وبوتات ديسكورد</p>
+  </section>
+
+  <section id="services">
+    <h3>🧩 خدماتنا</h3>
+    <ul>
+      <li>✅ استضافة بوتات ديسكورد مع تحكم كامل</li>
+      <li> سكربتات ومودات واشياء حصرية </li>
+      <li>🛠️ دعم فني  </li>
+    </ul>
+  </section>
+
+  <section id="order">
+    <h3>📦 اطلب خدمتك</h3>
+    <form id="orderForm">
+      <input type="text" name="username" placeholder=" اليوزر الخاص بك في الديسكورد  " required />
+      <select name="service">
+        <option disabled selected>اختر نوع المنتج</option>
+        <option value="bot">استضافة بوت ديسكورد</option>
+        <option value="mta">مودات MTA</option>
+        <option value="mta">سكربتات  Mta</option>
+        <option value="discord">منتجات اخرى في الديسكورد</option>
+      </select>
+      <textarea name="details" placeholder="أدخل تفاصيل الطلب..." required></textarea>
+      <button type="submit">إرسال الطلب</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 New York Host – تم التنفيذ بشغف 💙</p>
+  </footer>
+
+  <script>
+    document.getElementById("orderForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const data = new FormData(this);
+      const payload = {
+        content: `📥 طلب جديد:
+👤 الاسم: ${data.get("username")}
+📦 الخدمة: ${data.get("service")}
+📝 التفاصيل: ${data.get("details")}`
+      };
+      fetch("https://discord.com/api/webhooks/1387610227079381043/T4uA7dg9R3zfVbPH0brAQ-2XYnj6s4OluUKWyssbHomPRjqcUU0g9xZiJJsLNLp2XYaM", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      }).then(() => {
+        alert("تم إرسال الطلب بنجاح!");
+        this.reset();
+      });
+    });
+  </script>
+</body>
+</html>
