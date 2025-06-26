@@ -1,0 +1,63 @@
+body {
+  font-family: 'Cairo', sans-serif;
+  margin: 0;
+  background: #f5faff;
+  color: #003366;
+}
+
+header {
+  background: #004488;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.hero {
+  padding: 50px 20px;
+  text-align: center;
+  background: linear-gradient(to right, #0066cc, #3399ff);
+  color: white;
+}
+
+section {
+  padding: 40px 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin: auto;
+}
+
+input, select, textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background: #0066cc;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #004488;
+}
+
+footer {
+  text-align: center;
+  background: #eee;
+  padding: 20px;
+}
